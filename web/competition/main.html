@@ -1,0 +1,32 @@
+<html>
+<head>
+  <title>Data visualization</title>
+  <link rel="stylesheet" type="text/css" href="main.css"/>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../neoproxy.js"></script>
+  <script type="text/javascript" src="events.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+</head>
+
+<body>
+	<h1>Competion chord diagram</h1>
+	
+	<p>This diagram shows the main OnDs per airline by adding all the fligths for the same OnD during the whole year.
+	Each colored ARC represents an airport. They are sized according to the number of arriving+departing fligths.
+	Each colored CHORD represents the number of flights for a same airline and OnD.</p>
+	
+	<p>By hovering over a colored ARC you will highlight all the fligths arriving or departing from that airport.
+	By hovering over a colored CHORD you will highlight all the fligths for that OnD among all airlines. Note that
+	the table next to the graph will get updated to display all the airlines competing on that route and their price.</p>
+	
+	<p><strong>For example</strong>, by hovering over the colored ARC corresponding to airport LHR you can discover 
+	that AY and	BA are competing for the HEL-LHR OnD.</p>
+	
+	<div id="graph_div"></div>
+	<div id="num_data"></div>
+	
+	<script type="text/javascript">
+  getDataThroughAjaxCall(MAX_OND, buildChordGraph);
+	</script>
+</body>
+</html>
